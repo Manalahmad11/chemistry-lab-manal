@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مختبر التفاعلات الكيميائية | المعلمة منال الطريقي</title>
+<style>
+:root{--ink:#263b35;--muted:#66766d;--green:#287f83;--sage:#d9f0ed;--cream:#f8f7ff;--peach:#e8dff6;--line:#dce6ea;--white:#ffffff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 8% 8%,#d8f1ee 0,transparent 24%),radial-gradient(circle at 94% 24%,#eee3fa 0,transparent 25%),radial-gradient(circle at 8% 72%,#f8e5d7 0,transparent 22%),linear-gradient(135deg,#eaf5f4 0%,#f5f0fb 52%,#fbf0e6 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Geeza Pro",Tahoma,Arial,sans-serif;line-height:1.65}.wrap{max-width:1080px;margin:auto;padding:16px}
+.hero{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:16px 16px;text-align:center;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;left:-62px;top:-86px;width:125px;height:125px;border-radius:50%;background:#d9f0ed}.hero:after{content:"";position:absolute;right:-62px;bottom:-86px;width:125px;height:125px;border-radius:50%;background:#e8dff6}.hero>*{position:relative}.mark{display:inline-flex;width:54px;height:54px;border-radius:16px;align-items:center;justify-content:center;background:#e1eadc;font-size:29px}.eyebrow{font-size:14px;color:var(--green);font-weight:bold;margin-top:8px}.hero h1{font-size:clamp(26px,5vw,39px);margin:5px 0;color:#263b35}.hero p{color:var(--muted);margin:5px auto;max-width:650px}.teacher{display:inline-block;margin-top:10px;background:#d9f0ed;border-radius:30px;padding:6px 15px;font-weight:bold;color:#286c70}.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:15px}.badge{border:1px solid #e0e5d9;background:#fffdf8;border-radius:9px;padding:5px 10px;font-size:13px;color:#526b5a}
+.notice{margin:14px 0;background:#fff5e6;border:1px solid #efdfc4;border-radius:12px;padding:11px 14px;font-size:14px}.headrow{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap}.title{font-size:23px;margin:12px 0 2px}.sub{color:var(--muted);font-size:14px;margin:0 0 10px}.points{background:#d9f0ed;color:#286c70;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:8px}.exp{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:10px;text-align:right;cursor:pointer;font:inherit;min-height:96px;position:relative;transition:.15s}.exp:hover{border-color:#83bfc0}.exp.active{background:#e2f4f2;border:2px solid #4b9a9c}.exp .icon{font-size:26px;display:block;margin-bottom:5px}.exp strong{display:block;color:#2d4337}.exp small{display:block;color:var(--muted);margin-top:3px}.num{position:absolute;left:10px;top:10px;border-radius:50%;background:#f0e8fa;color:#6d5590;padding:1px 8px;font-size:12px}
+.panel,.quiz{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:12px;margin-top:11px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.panelhead h2{margin:0;font-size:22px}.pill{background:#d9f0ed;color:#42654c;border-radius:20px;padding:4px 10px;font-size:13px;font-weight:bold}.desc{color:#5b6e62;margin:8px 0}.sim{display:grid;grid-template-columns:1fr 1fr;gap:13px}.visual{background:#eef8fa;border:1px solid #dce8ea;border-radius:15px;min-height:195px;padding:10px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}.beaker{height:108px;width:100px;border:4px solid #87988a;border-top:0;border-radius:0 0 22px 22px;position:relative;overflow:hidden;margin:7px auto 3px;background:#ffffffaa}.liquid{position:absolute;bottom:0;left:0;right:0;height:64%;background:#82cfd0aa;transition:.4s}.bubble{position:absolute;bottom:5px;left:25px;color:white;font-size:24px;animation:bob 1.5s infinite alternate}.bubble.b2{left:68px;animation-delay:.4s}.bubble.b3{left:48px;animation-delay:.2s}@keyframes bob{to{transform:translateY(-35px);opacity:.3}}.caption{font-size:13px;color:var(--muted)}
+.visual-icon{font-size:48px;line-height:1.15;margin:7px auto 2px;filter:drop-shadow(0 4px 3px #0002);transition:transform .35s}.visual.running .visual-icon{transform:scale(1.22) rotate(-5deg)}.visual.running .liquid{filter:saturate(1.5);height:75%}.visual.running .bubble{display:block}.controls{display:flex;flex-direction:column;justify-content:center;gap:10px}.control{background:#faf9f4;border:1px solid var(--line);border-radius:11px;padding:8px}.control label{font-weight:bold;display:block;margin-bottom:5px}.control select{width:100%;padding:8px;border:1px solid #d4ddd0;border-radius:8px;background:white;font:inherit;font-size:16px;color:var(--ink)}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{font:inherit;font-weight:bold;border:0;border-radius:9px;padding:10px 14px;cursor:pointer}.primary{background:#4f745c;color:white}.secondary{background:#eceaf7;color:#4b4670}.equation{direction:ltr;text-align:center;background:#f7eee5;border:1px solid #ead8c8;border-radius:10px;padding:9px;margin-top:9px;color:#765640;font-weight:bold;font-size:18px;overflow-wrap:anywhere}.result{background:#eaf7f4;border:1px solid #cfe8e3;border-radius:12px;padding:10px;margin-top:9px;min-height:60px}.result h3{margin:0 0 5px;color:#28777b}.result p{margin:0}.quiz h2{margin:0 0 8px}.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:10px 0}.options button{font:inherit;border:1px solid var(--line);background:#f4f4ed;color:var(--ink);border-radius:9px;padding:10px;cursor:pointer}.options button:disabled{opacity:.85}.feedback{font-weight:bold;min-height:28px}.progress{height:8px;background:#e8e9df;border-radius:20px;overflow:hidden;margin:8px 0 12px}.bar{height:100%;background:#4b9a9c;width:0;transition:width .2s}.footer{text-align:center;color:var(--muted);font-size:13px;padding:12px 5px}
+@media(max-width:620px){.wrap{padding:8px}.hero{padding:15px 11px}.sim{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.exp{padding:9px;min-height:108px}.exp strong{font-size:14px}.exp small{font-size:12px}.panel,.quiz{padding:11px}}@media(max-width:360px){.grid{grid-template-columns:1fr}}
+
+.science-stickers{display:flex;justify-content:center;gap:10px;margin:0 auto 8px;position:relative;z-index:2}
+.science-stickers span{display:inline-flex;align-items:center;justify-content:center;width:39px;height:39px;border-radius:13px;background:#ffffffd9;border:1px solid #dce6ea;box-shadow:0 3px 8px #18324b0c;font-size:21px}
+.hero h1{letter-spacing:0}
+
+
+/* Compact layout: reduce excess blank space */
+.wrap{padding:10px}
+.hero{padding:16px 14px}
+.hero p{margin:3px auto}
+.badges{margin-top:9px;gap:6px}
+.notice{margin:9px 0;padding:9px 12px}
+.title{margin:13px 0 2px}
+.grid{gap:8px}
+.exp{min-height:94px;padding:10px}
+.exp .icon{font-size:23px;margin-bottom:2px}
+.panel,.quiz{padding:12px;margin-top:12px}
+.visual{min-height:185px;padding:10px}
+.beaker{height:108px;width:100px;margin:7px auto 3px}
+.controls{gap:7px}
+.control{padding:8px}
+.equation{padding:9px;margin-top:9px}
+.result{padding:10px;margin-top:9px;min-height:58px}
+@media(max-width:620px){
+ .wrap{padding:8px}
+ .hero{padding:14px 10px}
+ .badges{gap:5px}
+ .badge{padding:4px 7px;font-size:12px}
+ .grid{gap:7px}
+ .exp{min-height:105px;padding:8px}
+ .panel,.quiz{padding:10px}
+}
+
+
+/* Colorful lab atmosphere across the entire page */
+body{background-attachment:fixed}
+.wrap{position:relative}
+.wrap:before{content:"⚛";position:fixed;z-index:-1;left:-15px;top:36%;font-size:110px;color:#7bb9b044;transform:rotate(-15deg);pointer-events:none}
+.wrap:after{content:"🧬";position:fixed;z-index:-1;right:-12px;top:67%;font-size:72px;opacity:.18;transform:rotate(14deg);pointer-events:none}
+.hero{background:linear-gradient(125deg,#d9f0ed 0%,#f6f1ff 52%,#f9e6d8 100%);border:1px solid #d4e5e3;box-shadow:0 8px 24px #567e7a14}
+.hero:before{background:#b8e2dcaa}
+.hero:after{background:#e3d2f3aa}
+.hero h1{color:#244e58}
+.eyebrow{color:#317b79}
+.teacher{background:#d4ebe5;color:#245c5b}
+.badge{background:#ffffffb8;border-color:#d7e6e4}
+.notice{background:linear-gradient(110deg,#fff4df,#fff9ed);border-color:#edd7b1}
+.exp{background:linear-gradient(145deg,#fffefa,#f1f8f6);box-shadow:0 4px 12px #547a7610}
+.exp:nth-child(4n+1){background:linear-gradient(145deg,#fff5ef,#fffdf8)}
+.exp:nth-child(4n+2){background:linear-gradient(145deg,#f4f0ff,#fffdfd)}
+.exp:nth-child(4n+3){background:linear-gradient(145deg,#fff8e8,#fffdf8)}
+.exp:nth-child(4n){background:linear-gradient(145deg,#eaf8f6,#fffdfb)}
+.exp.active{background:linear-gradient(145deg,#d8f1ed,#e9f5f2);border-color:#4b9a9c;box-shadow:0 5px 14px #4b9a9c20}
+.num{background:#e9ddf7;color:#694d91}
+.exp:nth-child(3n+1) .num{background:#f6dfd1;color:#8b5d43}
+.panel{background:linear-gradient(145deg,#fffefa,#f4faf9)}
+.quiz{background:linear-gradient(145deg,#f5f0ff,#fffefa)}
+.visual{background:linear-gradient(145deg,#e4f4f3,#f2eafb 62%,#fff0e5);border-color:#d6e5e5}
+.control{background:#f5f8f5}
+.pill,.points{background:#d9efeb;color:#286c70}
+.equation{background:linear-gradient(100deg,#f1eaff,#e7f5f3);border-color:#d8d9ed;color:#5d5085}
+.result{background:linear-gradient(110deg,#e7f5ed,#eff8f7);border-color:#cfe5dc}
+.options button{background:linear-gradient(120deg,#f2effb,#f2f8f6)}
+.footer{background:#e2f0ed;border-radius:14px;margin-top:12px;color:#48685f}
+
+</style></head>
+<body><main class="wrap" id="lab">
+<header class="hero"><div class="science-stickers" aria-hidden="true"><span>🧬</span><span>⚗️</span><span>🔬</span></div><div class="mark">⚗️</div><div class="eyebrow">مختبر افتراضي للاستكشاف والتعلّم</div><h1>مختبر التفاعلات الكيميائية</h1><p>جرّبي، لاحظي، فسّري… واكتشفي كيف تتغيّر المواد في عالم الكيمياء.</p><div class="teacher">إعداد المعلمة / منال الطريقي</div><div class="badges"><span class="badge">١٢ محطة علمية</span><span class="badge">تجارب تفاعلية</span><span class="badge">تحديات ونقاط</span><span class="badge">مصمم للجوال</span></div></header>
+<div class="notice"><b>تنبيه للسلامة:</b> هذه محاكاة تعليمية افتراضية وليست دليلًا لإجراء التجارب الحقيقية. لا تخلطي مواد أو تسخنيها خارج المختبر المدرسي، واتبعي تعليمات المعلمة والسلامة.</div>
+<div class="headrow"><div><h2 class="title">محطات المختبر</h2><p class="sub">اختاري بطاقة لفتح التجربة وملاحظة النتيجة.</p></div><div class="points" id="points">🏅 نقاطك: ٠</div></div>
+<div class="grid" id="cards">
+<button class="exp active" data-id="gas"><span class="num">١</span><span class="icon">🫧</span><strong>انطلاق الغاز</strong><small>حمض + كربونات</small></button>
+<button class="exp" data-id="indicator"><span class="num">٢</span><span class="icon">🌈</span><strong>الكواشف الكيميائية</strong><small>تغيّر اللون</small></button>
+<button class="exp" data-id="acidbase"><span class="num">٣</span><span class="icon">⚗️</span><strong>الأحماض والقواعد</strong><small>تصنيف المحاليل</small></button>
+<button class="exp" data-id="solubility"><span class="num">٤</span><span class="icon">🧂</span><strong>الذوبان</strong><small>ما الذي يذوب في الماء؟</small></button>
+<button class="exp" data-id="crystal"><span class="num">٥</span><span class="icon">💎</span><strong>التبلور</strong><small>نمو البلورات</small></button>
+<button class="exp" data-id="combustion"><span class="num">٦</span><span class="icon">🔥</span><strong>الاحتراق</strong><small>متطلبات الاحتراق</small></button>
+<button class="exp" data-id="metals"><span class="num">٧</span><span class="icon">🪙</span><strong>تفاعلات الفلزات</strong><small>مقارنة النشاط</small></button>
+<button class="exp" data-id="electrolysis"><span class="num">٨</span><span class="icon">⚡</span><strong>التحليل الكهربائي للماء</strong><small>تفكك الماء</small></button>
+<button class="exp" data-id="mixtures"><span class="num">٩</span><span class="icon">🥛</span><strong>المخاليط والمحاليل</strong><small>متجانس أم غير متجانس؟</small></button>
+<button class="exp" data-id="changes"><span class="num">١٠</span><span class="icon">🧊</span><strong>التغيرات الفيزيائية والكيميائية</strong><small>ميّزي بين التغيرات</small></button>
+<button class="exp" data-id="rate"><span class="num">١١</span><span class="icon">⏱️</span><strong>سرعة التفاعل</strong><small>الحرارة والتركيز</small></button>
+<button class="exp" data-id="mass"><span class="num">١٢</span><span class="icon">⚖️</span><strong>حفظ الكتلة</strong><small>قبل التفاعل وبعده</small></button>
+</div>
+<section class="panel"><div class="panelhead"><h2 id="title">انطلاق الغاز: هل تظهر فقاعات؟</h2><span class="pill" id="type">تفاعل كيميائي</span></div><p class="desc" id="desc">في النموذج التعليمي، يتفاعل حمض مع كربونات وينطلق غاز ثاني أكسيد الكربون، فتظهر فقاعات.</p>
+<div class="sim"><div class="visual" id="visual"><b id="vtitle">وعاء التفاعل الافتراضي</b><div class="visual-icon" id="visualIcon">🧪</div><div class="beaker"><div class="liquid" id="liquid"></div><div class="bubble" id="b1">•</div><div class="bubble b2" id="b2">•</div><div class="bubble b3" id="b3">•</div></div><div class="caption" id="caption">فقاعات غازية تظهر في المحاكاة</div></div>
+<div class="controls"><div class="control"><label for="a">اختاري الحالة الأولى</label><select id="a"></select></div><div class="control"><label for="b">قارني مع</label><select id="b"></select></div><div class="actions"><button class="btn primary" id="run">ابدئي المحاكاة</button><button class="btn secondary" id="reset">إعادة التجربة</button></div></div></div>
+<div class="equation" id="eq">حمض + كربونات ⟶ ملح + ماء + CO₂ ↑</div><div class="result" id="result" aria-live="polite"><h3>🔎 قبل أن تبدئي</h3><p>اختاري الحالات ثم اضغطي «ابدئي المحاكاة» لمشاهدة الملاحظة والتفسير.</p></div></section>
+<section class="quiz"><h2>تحدّي العالِمة الصغيرة</h2><p id="question"></p><div class="progress"><div class="bar" id="bar"></div></div><div class="options" id="options"></div><div class="feedback" id="feedback" aria-live="polite"></div><button class="btn secondary" id="next">السؤال التالي ←</button></section>
+<footer class="footer">مختبر تعليمي افتراضي • إعداد المعلمة / منال الطريقي<br>المحاكاة للتعلّم والفهم، ولا تغني عن التجربة العلمية الآمنة بإشراف المعلمة.</footer>
+</main>
+<script>
+(function(){const root=document.getElementById('lab'),$=id=>root.querySelector('#'+id);
+const D={
+gas:{title:'انطلاق الغاز: هل تظهر فقاعات؟',type:'تفاعل كيميائي',desc:'في النموذج التعليمي، يتفاعل حمض مع كربونات وينطلق غاز ثاني أكسيد الكربون، فتظهر فقاعات.',v:'وعاء التفاعل الافتراضي',cap:'فقاعات غازية تظهر في المحاكاة',eq:'حمض + كربونات ⟶ ملح + ماء + CO₂ ↑',color:'#8fc7baaa',bub:true,opts:[['حمض + كربونات','yes'],['ماء + ماء','water'],['ماء + ملح','salt']],res:{yes:'تظهر فقاعات بسبب انطلاق غاز ثاني أكسيد الكربون. تكوّن الغاز دليل على حدوث تفاعل كيميائي في النموذج.',water:'لا نتوقع ظهور فقاعات ناتجة عن تفاعل كيميائي من الماء وحده في هذا النموذج.',salt:'ذوبان الملح في الماء لا ينتج غازًا عادةً.'}},
+indicator:{title:'الكواشف الكيميائية: ما اللون المتوقع؟',type:'دليل لوني',desc:'توضح المحاكاة تغيّر لون الكاشف بحسب طبيعة المحلول. الألوان تعليمية تقريبية وليست قياسًا فعليًا.',v:'كاشف لوني افتراضي',cap:'لون الكاشف يتغيّر في النموذج',eq:'كاشف + محلول ⟶ تغيّر لون بحسب pH',color:'#d8a4bd',bub:false,opts:[['محلول حمضي','acid'],['محلول متعادل','neutral'],['محلول قاعدي','base']],res:{acid:'في هذا النموذج يظهر اللون الوردي/الأحمر للدلالة على وسط حمضي.',neutral:'في هذا النموذج يظهر اللون الأخضر للدلالة على وسط متعادل.',base:'في هذا النموذج يظهر اللون الأزرق/البنفسجي للدلالة على وسط قاعدي.'}},
+acidbase:{title:'الأحماض والقواعد: صنّفي المحلول',type:'تصنيف',desc:'اختاري المثال ولاحظي تصنيفه التقريبي. لا تمثل الألوان قياسًا فعليًا لقيمة pH.',v:'مقياس pH توضيحي',cap:'لون تقريبي بحسب طبيعة المحلول',eq:'pH < 7 حمضي | 7 متعادل | pH > 7 قاعدي',color:'#c2a8d7',bub:false,opts:[['عصير الليمون','acid'],['ماء نقي (تقريبًا)','neutral'],['محلول صابون','base']],res:{acid:'عصير الليمون مثال شائع لمحلول حمضي.',neutral:'الماء النقي متعادل تقريبًا عند 25°C، وpH يساوي 7.',base:'محلول الصابون مثال شائع لمحلول قاعدي، وتختلف قيمته حسب المنتج.'}},
+solubility:{title:'الذوبان: أي المواد تذوب؟',type:'خاصية فيزيائية',desc:'قارني بين مواد تذوب في الماء وأخرى لا تذوب فيه جيدًا في الظروف العادية.',v:'كأس ماء افتراضي',cap:'تمثيل جسيمات المادة في الماء',eq:'مادة قابلة للذوبان + ماء ⟶ محلول',color:'#9dc9d0',bub:false,opts:[['ملح الطعام في الماء','salt'],['رمل في الماء','sand'],['زيت في الماء','oil']],res:{salt:'يذوب ملح الطعام في الماء ويكوّن محلولًا متجانسًا.',sand:'لا يذوب الرمل في الماء عادةً؛ تبقى حبيباته وقد تترسب.',oil:'لا يمتزج الزيت بالماء امتزاجًا متجانسًا، بل تتكون طبقتان غالبًا.'}},
+crystal:{title:'التبلور: كيف تنمو البلورات؟',type:'تغيّر فيزيائي',desc:'توضح المحاكاة فكرة تكوّن البلورات عند تشبع المحلول ثم فقدان بعض المذيب أو تبريده.',v:'محلول مشبع افتراضي',cap:'بلورات توضيحية تنمو تدريجيًا',eq:'محلول مشبع ⟶ بلورات + مذيب',color:'#b6c8d9',bub:false,opts:[['تبريد محلول مشبع','cool'],['إضافة ماء أكثر','water'],['تقليب فقط','stir']],res:{cool:'قد يساعد تبريد بعض المحاليل المشبعة على تكوّن البلورات حسب نوع المذاب ودرجة الحرارة.',water:'إضافة المذيب قد تجعل المحلول أقل تشبعًا، فلا يعني ذلك نمو البلورات فورًا.',stir:'التقليب وحده لا يضمن تكوّن البلورات؛ تعتمد العملية على التشبع والظروف.'}},
+combustion:{title:'الاحتراق: ما شروط حدوثه؟',type:'تفاعل كيميائي',desc:'تحتاج عملية الاحتراق عادةً إلى مادة قابلة للاحتراق وأكسجين ومصدر طاقة ابتدائية.',v:'مثلث الاحتراق',cap:'توضيح مرئي للاحتراق الافتراضي',eq:'وقود + أكسجين + حرارة ⟶ نواتج + طاقة',color:'#e4b49b',bub:false,opts:[['وقود + أكسجين + حرارة','all'],['وقود فقط','fuel'],['أكسجين فقط','oxygen']],res:{all:'صحيح من حيث المبدأ: عناصر مثلث الاحتراق هي الوقود والأكسجين والحرارة.',fuel:'وجود الوقود وحده لا يكفي؛ يلزم الأكسجين ومصدر طاقة مناسب.',oxygen:'الأكسجين وحده لا يسبب الاحتراق دون وقود ومصدر طاقة مناسب.'}},
+metals:{title:'تفاعلات الفلزات: مقارنة النشاط',type:'سلسلة النشاط',desc:'تساعد سلسلة نشاط الفلزات على توقع قدرة فلز على إزاحة فلز آخر من محلوله. هذه مقارنة نظرية.',v:'فلز في محلول افتراضي',cap:'تغيّر توضيحي على سطح الفلز',eq:'فلز أنشط + محلول ملح فلز أقل نشاطًا ⟶ إزاحة محتملة',color:'#b8c5b6',bub:false,opts:[['حديد في محلول كبريتات النحاس','iron'],['نحاس في محلول كبريتات الحديد','copper'],['فلز غير محدد','unknown']],res:{iron:'الحديد أنشط من النحاس؛ يمكنه إزاحة النحاس من محلول كبريتات النحاس في التفاعل المناسب.',copper:'النحاس أقل نشاطًا من الحديد، لذلك لا يزيحه من محلول ملحه في الظروف المعتادة.',unknown:'لا يمكن توقع النتيجة دون معرفة نوع الفلز والمحلول والظروف.'}},
+electrolysis:{title:'التحليل الكهربائي للماء',type:'تفكك كيميائي',desc:'توضح المحاكاة أن التيار الكهربائي يمكن أن يسبب تفكك الماء إلى الهيدروجين والأكسجين في جهاز مناسب وبشروط خاصة.',v:'خلية تحليل كهربائي افتراضية',cap:'فقاعات توضيحية عند القطبين',eq:'2H₂O ⟶ 2H₂ + O₂ (طاقة كهربائية)',color:'#9dc9d0',bub:true,opts:[['تيار في جهاز مناسب','current'],['إضافة ملح الطعام فقط','salt'],['تجميد الماء','freeze']],res:{current:'يتطلب التحليل الكهربائي مصدر تيار وجهازًا مناسبًا. هذا تمثيل نظري وليس تعليمات لبناء جهاز.',salt:'إضافة الملح وحدها لا تحلل الماء كهربائيًا؛ وقد ينتج عن التحليل غازات خطرة ويتطلب تجهيزات مناسبة.',freeze:'تجميد الماء تغير فيزيائي، وليس تحليلًا كهربائيًا.'}},
+mixtures:{title:'المخاليط والمحاليل: صنّفي المخلوط',type:'تصنيف المواد',desc:'اختاري المثال وحددي نوع المخلوط بحسب مظهره وتوزع مكوناته.',v:'كأس مخلوط افتراضي',cap:'تمثيل بصري للمكونات',eq:'متجانس: تركيب موحّد | غير متجانس: أجزاء متميزة',color:'#b6c8b3',bub:false,opts:[['ملح مذاب في الماء','homo'],['ماء + رمل','hetero'],['زيت + ماء','hetero']],res:{homo:'محلول الملح في الماء متجانس عندما يذوب الملح تمامًا.',hetero:'الماء مع الرمل أو الزيت مع الماء مخلوط غير متجانس؛ يمكن تمييز مكوناته أو طبقاته.'}},
+changes:{title:'تغير فيزيائي أم كيميائي؟',type:'تمييز التغيرات',desc:'قرري هل يتكون نوع جديد من المادة أم يتغير شكل المادة أو حالتها فقط.',v:'مقارنة قبل وبعد',cap:'نموذج توضيحي للتغير',eq:'فيزيائي: لا تتكون مادة جديدة | كيميائي: تتكون مادة جديدة',color:'#c3b9d9',bub:false,opts:[['انصهار الثلج','physical'],['صدأ الحديد','chemical'],['احتراق الورق','chemical']],res:{physical:'انصهار الثلج تغير فيزيائي؛ تظل المادة ماءً وتتغير حالتها فقط.',chemical:'صدأ الحديد أو احتراق الورق تغير كيميائي؛ تتكون مواد جديدة بخصائص مختلفة.'}},
+rate:{title:'سرعة التفاعل: ما الذي يغيّرها؟',type:'سرعة التفاعل',desc:'استكشفي أثر الحرارة والتركيز في سرعة تفاعل مناسب؛ تختلف الاستجابة بحسب التفاعل.',v:'مقارنة سرعة افتراضية',cap:'حركة الجسيمات تمثيلية',eq:'ارتفاع الحرارة أو التركيز قد يزيد سرعة كثير من التفاعلات',color:'#d9b4c4',bub:true,opts:[['درجة حرارة أعلى','hot'],['تركيز أعلى','conc'],['درجة حرارة أقل','cold']],res:{hot:'ترتفع سرعة كثير من التفاعلات عند زيادة الحرارة بسبب زيادة التصادمات الفعالة.',conc:'زيادة التركيز قد تزيد سرعة التفاعل في كثير من الحالات بسبب زيادة التصادمات.',cold:'خفض الحرارة يبطئ كثيرًا من التفاعلات عادةً، بحسب طبيعة التفاعل.'}},
+mass:{title:'حفظ الكتلة: أين تذهب الكتلة؟',type:'قانون حفظ الكتلة',desc:'في نظام مغلق، تكون الكتلة الكلية قبل التفاعل وبعده متساوية إذا لم تدخل مادة أو تخرج منه.',v:'ميزان افتراضي',cap:'قارني الكتلة قبل التفاعل وبعده',eq:'كتلة المتفاعلات = كتلة النواتج (في نظام مغلق)',color:'#b7c6b8',bub:false,opts:[['وعاء مغلق','closed'],['وعاء مفتوح مع خروج غاز','open'],['إضافة مادة أثناء التفاعل','add']],res:{closed:'في النظام المغلق تُحفظ الكتلة الكلية؛ لا تفنى الذرات ولا تُستحدث خلال التفاعل الكيميائي.',open:'قد تبدو الكتلة المقاسة أقل إذا خرج غاز من وعاء مفتوح؛ فالغاز ما زال له كتلة.',add:'عند إضافة مادة أثناء التفاعل يجب احتساب كتلتها عند المقارنة.'}}
+};
+let current='gas',points=0,qi=0,answered=false;
+const qs=[
+{q:'ما الدليل الذي قد يشير إلى انطلاق غاز في تفاعل الحمض والكربونات؟',o:['تغيّر شكل الوعاء','ظهور الفقاعات','اختفاء الوعاء'],c:1,t:'صحيح! قد تدل الفقاعات على تكوّن غاز أثناء التفاعل.'},
+{q:'ما قيمة pH للمحلول المتعادل تقريبًا عند 25°C؟',o:['أقل من 7','7','أكبر من 14'],c:1,t:'أحسنتِ! قيمة pH للماء النقي المتعادل تقارب 7 عند 25°C.'},
+{q:'أي مثال يمثل تغيرًا فيزيائيًا؟',o:['صدأ الحديد','احتراق الورق','انصهار الثلج'],c:2,t:'صحيح! الانصهار يغيّر الحالة ولا ينتج مادة جديدة.'},
+{q:'ما اسم المادة الصلبة التي قد تتكوّن من محلولين؟',o:['راسب','بخار','وقود'],c:0,t:'ممتاز! تسمى المادة الصلبة قليلة الذوبان راسبًا.'},
+{q:'ما عناصر مثلث الاحتراق؟',o:['ماء وملح وضوء','وقود وأكسجين وحرارة','حديد وماء فقط'],c:1,t:'صحيح! يحتاج الاحتراق إلى وقود وأكسجين وحرارة.'},
+{q:'ماذا يحدث للكتلة الكلية في تفاعل داخل نظام مغلق؟',o:['تُحفظ','تختفي دائمًا','تتضاعف دائمًا'],c:0,t:'رائع! الكتلة الكلية محفوظة في النظام المغلق.'},
+{q:'أي مثال يمثّل مخلوطًا غير متجانس؟',o:['ملح مذاب في الماء','هواء','زيت وماء'],c:2,t:'صحيح! الزيت والماء يشكلان طبقتين غالبًا.'},
+{q:'ما الذي يزيد سرعة كثير من التفاعلات؟',o:['خفض الحرارة دائمًا','رفع درجة الحرارة غالبًا','إزالة المتفاعلات'],c:1,t:'أحسنتِ! زيادة الحرارة تسرّع كثيرًا من التفاعلات.'},
+{q:'أي مثال شائع لمحلول حمضي؟',o:['عصير الليمون','ماء نقي متعادل','محلول صابون غالبًا'],c:0,t:'صحيح! يحتوي عصير الليمون على أحماض.'},
+{q:'ما الذي يحتاج إليه تكوّن الصدأ عادةً؟',o:['أكسجين ورطوبة','ضوء وصوت','سكر فقط'],c:0,t:'ممتاز! يتطلب الصدأ الأكسجين والرطوبة عادةً.'},
+{q:'ماذا ينتج التحليل الكهربائي للماء في الظروف المناسبة؟',o:['هيدروجين وأكسجين','ملح وسكر','حديد ونحاس'],c:0,t:'صحيح! يمكن أن ينتج غازا الهيدروجين والأكسجين.'},
+{q:'ما الذي يساعد على تكوّن البلورات من محلول مناسب؟',o:['التشبع والتبريد أو التبخر','إضافة مزيد من المذيب دائمًا','التحريك وحده دائمًا'],c:0,t:'أحسنتِ! يعتمد التبلور على التشبع والظروف المناسبة.'}
+];
+function show(id){current=id;const d=D[id];root.querySelectorAll('.exp').forEach(b=>b.classList.toggle('active',b.dataset.id===id));$('visual').classList.remove('running');const icons={gas:'🫧',indicator:'🧪',acidbase:'🌈',solubility:'🧂',crystal:'💎',combustion:'🔥',metals:'🪙',electrolysis:'⚡',mixtures:'🥛',changes:'🧊',rate:'⏱️',mass:'⚖️'};$('visualIcon').textContent=icons[id]||'🧪';$('title').textContent=d.title;$('type').textContent=d.type;$('desc').textContent=d.desc;$('vtitle').textContent=d.v;$('caption').textContent=d.cap;$('eq').textContent=d.eq;$('liquid').style.background=d.color;$('b1').hidden=$('b2').hidden=$('b3').hidden=!d.bub;$('a').innerHTML='';$('b').innerHTML='';d.opts.forEach((x,i)=>{let o=document.createElement('option');o.value=x[1];o.textContent=x[0];$('a').appendChild(o);let p=document.createElement('option');p.value=x[1];p.textContent=x[0];$('b').appendChild(p)});if(d.opts.length>1)$('b').selectedIndex=1;$('result').innerHTML='<h3>🔎 قبل أن تبدئي</h3><p>اختاري حالتين ثم اضغطي «ابدئي المحاكاة» لمشاهدة الملاحظة والتفسير.</p>'}
+root.querySelectorAll('.exp').forEach(b=>b.addEventListener('click',()=>show(b.dataset.id)));
+$('run').addEventListener('click',()=>{const d=D[current],a=$('a').value,b=$('b').value;$('visual').classList.remove('running');void $('visual').offsetWidth;$('visual').classList.add('running');const icons={gas:'🫧',indicator:a==='acid'?'🧪':a==='base'?'🧫':'💧',acidbase:a==='acid'?'🍋':a==='base'?'🧼':'💧',solubility:a==='salt'?'🧂':a==='sand'?'🏖️':'🛢️',crystal:a==='cool'?'💎':a==='water'?'💧':'🥄',combustion:a==='all'?'🔥':'🪵',metals:a==='iron'?'🪙':'🔩',electrolysis:a==='current'?'⚡':'💧',mixtures:a==='homo'?'🥛':'🫗',changes:a==='physical'?'🧊':'🧪',rate:a==='hot'?'🌡️':a==='conc'?'⚗️':'❄️',mass:a==='closed'?'⚖️':a==='open'?'💨':'➕'};$('visualIcon').textContent=icons[current]||'🧪';let text=d.res[a]||'اختيار تعليمي للمقارنة.';if(b!==a)text+=' للمقارنة: '+(d.res[b]||'تعتمد النتيجة على طبيعة المواد والظروف.');$('result').innerHTML='<h3>الملاحظة والتفسير</h3><p>'+text+'</p>'});
+$('reset').addEventListener('click',()=>show(current));
+function drawQ(){let q=qs[qi];$('question').textContent='السؤال '+(qi+1)+' من '+qs.length+' • '+q.q;$('options').innerHTML='';q.o.forEach((x,i)=>{let b=document.createElement('button');b.type='button';b.textContent=x;b.addEventListener('click',()=>{if(answered)return;answered=true;if(i===q.c){points++;$('points').textContent='🏅 نقاطك: '+points.toLocaleString('ar-SA');$('feedback').textContent='⭐ '+q.t;$('feedback').style.color='#416849'}else{$('feedback').textContent='ليست الإجابة الصحيحة. راجعي الفكرة وحاولي في السؤال التالي.';$('feedback').style.color='#9a5540'}Array.from($('options').children).forEach(k=>k.disabled=true)});$('options').appendChild(b)});$('feedback').textContent='';$('bar').style.width=(qi/qs.length*100)+'%';answered=false}
+$('next').addEventListener('click',()=>{qi=(qi+1)%qs.length;drawQ()});show('gas');drawQ();
+})();
+</script></body></html>
